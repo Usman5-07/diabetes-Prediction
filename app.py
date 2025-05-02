@@ -2,7 +2,18 @@ import numpy as np
 import pickle 
 import streamlit as st
 
-model = pickle.load(open('D:/_Portfolio/ML Coding Projects/Diebeties Project/Diebeties_Trained_Model.sav', 'rb'))
+
+import os
+import urllib.request
+
+# Define path and URL
+model_path = "Diebeties_Trained_Model.sav"
+model_url = "https://raw.githubusercontent.com/Usman5-07/diabetes-Prediction/main/Diebeties_Trained_Model.sav"
+
+# Download the model if not already present
+if not os.path.exists(model_path):
+    urllib.request.urlretrieve(model_url, model_path)
+
 
 
 
